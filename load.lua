@@ -2,6 +2,12 @@ function love.load()
     paddleWidth = 10;
     paddleHeight = 100;
 
+    leftPlayerPoints = 0;
+    rightPlayrtPoints = 0;
+
+    ballDirectionX = 1;
+    ballDirectionY = 1;
+
     windowWidth = love.graphics.getWidth();
     windowHeight = love.graphics.getHeight();
     w = windowWidth;
