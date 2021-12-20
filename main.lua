@@ -13,6 +13,9 @@ end
 function isBallCollideWithLeftPaddle()
     return isPointInsideArea(ball, lPaddle);
 end
+function isBallCollideWithRightPaddle()
+    return isPointInsideAreaA(ball, rPaddle);
+end
 
 function love.update(dt)
     if (Game.state == "Playing") then

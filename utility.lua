@@ -9,12 +9,18 @@ function randomDirection()
     return direction;
 end
 
-function isPointInsideArea(A,area)
-    isXGood = (A.posX  >= area.posX) and (A.posX <= area.width);
-    isYGood = (A.posY >= area.posY) and (A.posY <= area.height)
+function isPointInsideArea(A, area)
+    isXGood = (A.posX >= area.posX) and (A.posX <= area.width);
+    isYGood = (A.posY >= area.posY) and (A.posY <= area.height);
+    return (isXGood and isYGood);
+end
+
+function isPointInsideAreaA(A, area)
+    isXGood = (A.posX + A.width >= area.posX);
+    isYGood = (A.posY + A.height >= area.posY);
     return isXGood and isYGood;
 end
 
 function showPoints()
-    print(leftPlayerPoints..':'..rightPlayrtPoints);
+    print(leftPlayerPoints .. ':' .. rightPlayrtPoints);
 end
