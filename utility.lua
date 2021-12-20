@@ -20,7 +20,3 @@ function isPointInsideAreaA(A, area)
     isYGood = (A.posY + A.height >= area.posY);
     return isXGood and isYGood;
 end
-
-function showPoints()
-    print(leftPlayerPoints .. ':' .. rightPlayrtPoints);
-end

@@ -9,6 +9,7 @@ require("ballProcedures")
 function love.draw()
     drawPaddles();
     drawBall();
+    showPoints();
 end
 function isBallCollideWithLeftPaddle()
     return isPointInsideArea(ball, lPaddle);

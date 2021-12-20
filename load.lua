@@ -3,7 +3,7 @@ function love.load()
     paddleHeight = 100;
 
     leftPlayerPoints = 0;
-    rightPlayrtPoints = 0;
+    rightPlayerPoints = 0;
 
     ballDirectionX = 1;
     ballDirectionY = 1;

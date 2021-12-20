@@ -23,7 +23,7 @@ function handleBallMovementInsideWindowBox(dt)
     isYTooBig = ball.posY > windowHeight - ball.height / 2;
 
     if (isXTooSmall) then
-        rightPlayrtPoints = rightPlayrtPoints + 1;
+        rightPlayerPoints = rightPlayerPoints + 1;
         reset();
     elseif (isXTooBig) then
         leftPlayerPoints = leftPlayerPoints + 1;
