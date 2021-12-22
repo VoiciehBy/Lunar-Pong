@@ -17,6 +17,6 @@ end
 
 function isPointInsideAreaA(A, area)
     isXGood = (A.posX + A.width >= area.posX);
-    isYGood = (A.posY + A.height >= area.posY);
+    isYGood = (A.posY + A.width <= area.posY + area.height) and (A.posY >= area.posY);
     return isXGood and isYGood;
 end
