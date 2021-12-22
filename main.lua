@@ -1,19 +1,27 @@
-require("Game")
 require("load")
 require("drawProcedures")
 require("inputHandling")
 require("ballProcedures")
 
 function love.draw()
-    drawPaddles();
-    drawBall();
-    showPoints();
+    if (Game.state == "Playing") then
+        drawPaddles();
+        drawBall();
+        showPoints();
+    elseif (Game.state == "Paused") then
+        drawPausedText();
+    end
 end
 
 function love.update(dt)
+    print(Game.state);
     if (Game.state == "Playing") then
         handleKeys(dt);
         handlePaddleCollision();
         handleBallMovementInsideWindowBox(dt);
+    elseif (Game.state == "Paused") then
+        handleKeys(0);
+        handlePaddleCollision();
+        handleBallMovementInsideWindowBox(0);
     end
 end

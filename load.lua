@@ -1,6 +1,10 @@
+require("Game")
 require("Object2D")
 
+
 function love.load()
+    Game = Game:new("Playing");
+
     leftPlayerPoints = 0;
     rightPlayerPoints = 0;
 
@@ -26,4 +30,6 @@ function love.load()
 
     PADDLE_SPEED = 500;
     BALL_SPEED = PADDLE_SPEED * 0.25;
+
+    b = false;
 end

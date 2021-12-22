@@ -11,10 +11,11 @@ function handleKeys(dt)
         mv(rPaddle, 0, PADDLE_SPEED * dt);
     end
 
-    if (love.keyboard.isDown("p")) then
-        Game.pauseGame();
-    end
-    if (love.keyboard.isDown("[")) then
-        Game.resumeGame();
+    if (love.keyboard.isDown('p') and (Game.state == "Playing")) then
+        Game.state = "Paused";
+    elseif (Game.state == "Paused") then
+        if (love.keyboard.isDown("return")) then
+            Game.state = "Playing";
+        end
     end
 end
