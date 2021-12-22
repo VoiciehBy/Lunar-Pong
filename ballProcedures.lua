@@ -40,10 +40,10 @@ function handlePaddleCollision()
     if (isBallCollideWithLeftPaddle()) then
         print("Left Pong");
         ballDirectionX = -ballDirectionX;
-        ballDirectionY = -ballDirectionY;
+        ballDirectionY = randomDirection();
     elseif (isBallCollideWithRightPaddle()) then
         print("Right Pong");
         ballDirectionX = -ballDirectionX;
-        ballDirectionY = -ballDirectionY;
+        ballDirectionY = randomDirection();
     end
 end

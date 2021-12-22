@@ -1,7 +1,4 @@
 function love.load()
-    paddleWidth = 10;
-    paddleHeight = 100;
-
     leftPlayerPoints = 0;
     rightPlayerPoints = 0;
 
@@ -13,6 +10,9 @@ function love.load()
     w = windowWidth;
     h = windowHeight;
 
+    paddleWidth = w / 80;
+    paddleHeight = h / 6;
+
     paddleStartY = (h / 2) - paddleHeight;
     rightPaddleStartX = w - paddleWidth;
 
@@ -20,5 +20,5 @@ function love.load()
     rPaddle = Object2D:new(rightPaddleStartX, paddleStartY, paddleWidth, paddleHeight);
     ball = Object2D:new(w/2, h/2, 16, 16);
 
-    love.window.setTitle("Pong by VoiciehBy");
+    love.window.setTitle("Lunar Pong by VoiciehBy");
 end
