@@ -1,21 +1,13 @@
 require("Game")
-require("Object2D")
 require("load")
 require("drawProcedures")
 require("inputHandling")
-require("utility")
 require("ballProcedures")
 
 function love.draw()
     drawPaddles();
     drawBall();
     showPoints();
-end
-function isBallCollideWithLeftPaddle()
-    return isPointInsideArea(ball, lPaddle);
-end
-function isBallCollideWithRightPaddle()
-    return isPointInsideAreaA(ball, rPaddle);
 end
 
 function love.update(dt)

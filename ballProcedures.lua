@@ -36,6 +36,13 @@ function handleBallMovementInsideWindowBox(dt)
     mv(ball, ballDirectionX * (BALL_SPEED * dt), ballDirectionY * (BALL_SPEED * dt));
 end
 
+function isBallCollideWithLeftPaddle()
+    return isPointInsideArea(ball, lPaddle);
+end
+function isBallCollideWithRightPaddle()
+    return isPointInsideAreaA(ball, rPaddle);
+end
+
 function handlePaddleCollision()
     if (isBallCollideWithLeftPaddle()) then
         print("Left Pong");

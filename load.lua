@@ -1,3 +1,5 @@
+require("Object2D")
+
 function love.load()
     leftPlayerPoints = 0;
     rightPlayerPoints = 0;
