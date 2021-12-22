@@ -6,12 +6,12 @@ function throwBall(dt)
 end
 
 function resetBall()
-    ball.posX = w/2;
-    ball.posY = h/2;
+    ball.posX = w / 2;
+    ball.posY = h / 2;
 end
 
 function reset()
-    resetBall();    
+    resetBall();
     throwBall();
 end
 

@@ -1,6 +1,3 @@
-PADDLE_SPEED = 500;
-BALL_SPEED = PADDLE_SPEED * 0.25;
-
 function handleKeys(dt)
     if (love.keyboard.isDown("w") and (lPaddle.posY > 0)) then
         mv(lPaddle, 0, -PADDLE_SPEED * dt);
@@ -14,10 +11,10 @@ function handleKeys(dt)
         mv(rPaddle, 0, PADDLE_SPEED * dt);
     end
 
-    if(love.keyboard.isDown("p")) then
+    if (love.keyboard.isDown("p")) then
         Game.pauseGame();
     end
-    if(love.keyboard.isDown("[")) then
+    if (love.keyboard.isDown("[")) then
         Game.resumeGame();
     end
 end

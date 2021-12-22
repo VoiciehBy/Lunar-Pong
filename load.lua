@@ -20,7 +20,10 @@ function love.load()
 
     lPaddle = Object2D:new(0, paddleStartY, paddleWidth, paddleHeight);
     rPaddle = Object2D:new(rightPaddleStartX, paddleStartY, paddleWidth, paddleHeight);
-    ball = Object2D:new(w/2, h/2, 16, 16);
+    ball = Object2D:new(w / 2, h / 2, 16, 16);
 
     love.window.setTitle("Lunar Pong by VoiciehBy");
+
+    PADDLE_SPEED = 500;
+    BALL_SPEED = PADDLE_SPEED * 0.25;
 end
