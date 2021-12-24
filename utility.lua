@@ -20,3 +20,11 @@ function isPointInsideAreaA(A, area)
     isYGood = (A.posY >= area.posY) and (A.posY <= area.posY + area.height);
     return (isXGood and isYGood);
 end
+
+function givePointToPlayer(player)
+    if (player == "left") then
+        LEFT_PLAYER_POINTS = LEFT_PLAYER_POINTS + 1;
+    elseif (player == "right") then
+        RIGHT_PLAYER_POINTS = RIGHT_PLAYER_POINTS + 1;
+    end
+end

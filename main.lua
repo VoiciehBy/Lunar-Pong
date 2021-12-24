@@ -14,7 +14,6 @@ function love.draw()
 end
 
 function love.update(dt)
-    print(Game.state);
     if (Game.state == "Playing") then
         handleKeys(dt);
         handlePaddleCollision();

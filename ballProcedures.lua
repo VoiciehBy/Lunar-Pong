@@ -10,7 +10,7 @@ function resetBall()
     ball.posY = h / 2;
 end
 
-function reset()
+function resetAndThrowBall()
     resetBall();
     throwBall();
 end
@@ -23,17 +23,17 @@ function handleBallMovementInsideWindowBox(dt)
     isYTooBig = ball.posY > windowHeight - ball.height / 2;
 
     if (isXTooSmall) then
-        rightPlayerPoints = rightPlayerPoints + 1;
-        reset();
+        givePointToPlayer("right");
+        resetAndThrowBall();
     elseif (isXTooBig) then
-        leftPlayerPoints = leftPlayerPoints + 1;
-        reset();
+        givePointToPlayer("left");
+        resetAndThrowBall();
     elseif (isYTooSmall) then
-        ballDirectionY = 1;
+        BALL_DIRECTION[2] = 1;
     elseif (isYTooBig) then
-        ballDirectionY = -1;
+        BALL_DIRECTION[2] = -1;
     end
-    mv(ball, ballDirectionX * (BALL_SPEED * dt), ballDirectionY * (BALL_SPEED * dt));
+    mv(ball, BALL_DIRECTION[1] * (BALL_SPEED * dt), BALL_DIRECTION[2] * (BALL_SPEED * dt));
 end
 
 function isBallCollideWithLeftPaddle()
@@ -43,14 +43,15 @@ function isBallCollideWithRightPaddle()
     return isPointInsideAreaA(ball, rPaddle);
 end
 
+function mkPong()
+    BALL_DIRECTION[1] = -BALL_DIRECTION[1];
+    BALL_DIRECTION[2] = randomDirection();
+end
+
 function handlePaddleCollision()
     if (isBallCollideWithLeftPaddle()) then
-        print("Left Pong");
-        ballDirectionX = -ballDirectionX;
-        ballDirectionY = randomDirection();
+        mkPong();
     elseif (isBallCollideWithRightPaddle()) then
-        print("Right Pong");
-        ballDirectionX = -ballDirectionX;
-        ballDirectionY = randomDirection();
+        mkPong();
     end
 end
