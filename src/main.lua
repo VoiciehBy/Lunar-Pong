@@ -4,6 +4,7 @@ require("inputHandling")
 require("ballProcedures")
 
 function love.draw()
+    love.graphics.setFont(font);
     if (Game.state == "Playing") then
         drawPaddles();
         drawBall();

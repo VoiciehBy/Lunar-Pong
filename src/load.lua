@@ -3,6 +3,8 @@ require("Object2D")
 
 
 function love.load()
+    font = love.graphics.newFont("8bitOperatorPlus-Bold.ttf",30);
+
     Game = Game:new("Playing");
     LEFT_PLAYER_POINTS = 0;
     RIGHT_PLAYER_POINTS = 0;

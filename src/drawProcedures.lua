@@ -11,6 +11,7 @@ function showPoints()
     love.graphics.print(LEFT_PLAYER_POINTS .. ':' .. RIGHT_PLAYER_POINTS, w / 2, h / 2);
 end
 function drawPausedText()
-    love.graphics.print("Paused", w / 2, h / 2);
-    love.graphics.print("Press ENTER to continue...", w / 2, h / 2 + 10);
+    x = w / 4 - font:getHeight();
+    love.graphics.print("Paused", x, h / 3);
+    love.graphics.print("Press ENTER to continue...", x, h / 3 + font:getHeight());
 end
