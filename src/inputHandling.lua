@@ -15,11 +15,11 @@ end
 function handleKeys(dt)
     handlePaddlesControls(dt);
 
-    if (love.keyboard.isDown('p') and (Game.state == "Playing")) then
+    if (Game.state == "MainMenu" and love.keyboard.isDown("return")) then
+        Game.state = "Playing";
+    elseif (Game.state == "Playing" and love.keyboard.isDown('p')) then
         Game.state = "Paused";
-    elseif (Game.state == "Paused") then
-        if (love.keyboard.isDown("return")) then
-            Game.state = "Playing";
-        end
+    elseif (Game.state == "Paused" and love.keyboard.isDown("return")) then
+        Game.state = "Playing";
     end
 end

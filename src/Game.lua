@@ -1,9 +1,9 @@
 Game = {
-    state = "Playing"
+    state = "MainMenu"
 }
 function Game:new(state)
     local o = {}
-    setmetatable(o, Game)
+    setmetatable(o, Game);
     o.state = state;
     return o;
 end

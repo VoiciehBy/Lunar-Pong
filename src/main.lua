@@ -5,7 +5,9 @@ require("ballProcedures")
 
 function love.draw()
     love.graphics.setFont(font);
-    if (Game.state == "Playing") then
+    if(Game.state == "MainMenu") then
+        drawMainMenu();
+    elseif (Game.state == "Playing") then
         drawPaddles();
         drawBall();
         showPoints();
@@ -15,7 +17,9 @@ function love.draw()
 end
 
 function love.update(dt)
-    if (Game.state == "Playing") then
+    if(Game.state == "MainMenu") then
+        handleKeys(0);
+    elseif (Game.state == "Playing") then
         handleKeys(dt);
         handlePaddleCollision();
         handleBallMovementInsideWindowBox(dt);
