@@ -8,9 +8,7 @@ function love.draw()
     if(Game.state == "MainMenu") then
         drawMainMenu();
     elseif (Game.state == "Playing") then
-        drawPaddles();
-        drawBall();
-        showPoints();
+        drawGameplay();
     elseif (Game.state == "Paused") then
         drawPausedText();
     end
@@ -25,7 +23,6 @@ function love.update(dt)
         handleBallMovementInsideWindowBox(dt);
     elseif (Game.state == "Paused") then
         handleKeys(0);
-        handlePaddleCollision();
         handleBallMovementInsideWindowBox(0);
     end
 end

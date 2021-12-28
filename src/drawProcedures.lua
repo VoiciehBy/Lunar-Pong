@@ -16,6 +16,13 @@ end
 function showPoints()
     love.graphics.print(LEFT_PLAYER_POINTS .. ':' .. RIGHT_PLAYER_POINTS, w / 2, h / 2);
 end
+
+function drawGameplay()
+    drawPaddles();
+    drawBall();
+    showPoints();
+end
+
 function drawPausedText()
     x = w / 4 - font:getHeight();
     love.graphics.print("Paused", x, h / 3);
