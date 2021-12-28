@@ -21,5 +21,9 @@ function handleKeys(dt)
         Game.state = "Paused";
     elseif (Game.state == "Paused" and love.keyboard.isDown("return")) then
         Game.state = "Playing";
+    elseif (Game.state == "MatchEnd" and love.keyboard.isDown("return")) then
+        resetPoints();
+        resetPaddlesPosition();
+        Game.state = "Playing";
     end
 end

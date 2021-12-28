@@ -8,6 +8,7 @@ function love.load()
     Game = Game:new("MainMenu");
     LEFT_PLAYER_POINTS = 0;
     RIGHT_PLAYER_POINTS = 0;
+    WIN_GOAL = 3;
 
     windowWidth = love.graphics.getWidth();
     windowHeight = love.graphics.getHeight();

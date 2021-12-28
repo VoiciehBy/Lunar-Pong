@@ -23,8 +23,16 @@ function drawGameplay()
     showPoints();
 end
 
-function drawPausedText()
+function drawTextInTheMiddle(text)
     x = w / 4 - font:getHeight();
-    love.graphics.print("Paused", x, h / 3);
+    love.graphics.print(text, x, h / 3);
     love.graphics.print("Press ENTER to continue...", x, h / 3 + font:getHeight());
+end
+
+function drawPausedText()
+    drawTextInTheMiddle("Paused");
+end
+
+function drawMatchEndText(winner)
+    drawTextInTheMiddle(winner .. " player won...");
 end
