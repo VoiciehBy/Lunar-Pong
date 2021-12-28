@@ -2,6 +2,7 @@ require("load")
 require("drawProcedures")
 require("inputHandling")
 require("ballProcedures")
+require("gameControlProcedures")
 
 function love.draw()
     love.graphics.setFont(font);
@@ -17,7 +18,6 @@ function love.draw()
 end
 
 function love.update(dt)
-    print(Game.state);
     if(isGameWon()) then
      Game.state = "MatchEnd";
     end

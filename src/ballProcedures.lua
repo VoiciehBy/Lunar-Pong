@@ -1,5 +1,4 @@
 require("utility")
-require("gameControlProcedures")
 
 function throwBall(dt)
     ballDirectionX = randomDirection();
