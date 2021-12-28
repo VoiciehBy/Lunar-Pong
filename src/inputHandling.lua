@@ -12,18 +12,22 @@ function handlePaddlesControls(dt)
     end
 end
 
+function handleReturnKey()
+    if(love.keyboard.isDown("return")) then
+       startGame();--or
+       resumeGame();--or
+       startNextMatch();
+    end
+end
+
+function handlePKey()
+    if(love.keyboard.isDown('p')) then
+        pauseGame();
+    end
+end
+
 function handleKeys(dt)
     handlePaddlesControls(dt);
-
-    if (Game.state == "MainMenu" and love.keyboard.isDown("return")) then
-        Game.state = "Playing";
-    elseif (Game.state == "Playing" and love.keyboard.isDown('p')) then
-        Game.state = "Paused";
-    elseif (Game.state == "Paused" and love.keyboard.isDown("return")) then
-        Game.state = "Playing";
-    elseif (Game.state == "MatchEnd" and love.keyboard.isDown("return")) then
-        resetPoints();
-        resetPaddlesPosition();
-        Game.state = "Playing";
-    end
+    handlePKey();
+    handleReturnKey();
 end

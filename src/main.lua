@@ -6,7 +6,7 @@ require("gameControlProcedures")
 
 function love.draw()
     love.graphics.setFont(font);
-    if(Game.state == "MainMenu") then
+    if (Game.state == "MainMenu") then
         drawMainMenu();
     elseif (Game.state == "Playing") then
         drawGameplay();
@@ -18,11 +18,11 @@ function love.draw()
 end
 
 function love.update(dt)
-    if(isGameWon()) then
-     Game.state = "MatchEnd";
+    if (isGameWon()) then
+        endMatch();
     end
 
-    if(Game.state == "MainMenu") then
+    if (Game.state == "MainMenu") then
         handleKeys(0);
     elseif (Game.state == "Playing") then
         handleKeys(dt);

@@ -33,3 +33,35 @@ function isGameWon()
         return false;
     end
 end
+
+function startGame()
+    if (Game.state == "MainMenu") then
+        Game.state = "Playing";
+    end
+end
+
+function pauseGame()
+    if (Game.state == "Playing") then
+        Game.state = "Paused";
+    end
+end
+
+function resumeGame()
+    if (Game.state == "Paused") then
+        Game.state = "Playing";
+    end
+end
+
+function endMatch()
+    if (isGameWon()) then
+    Game.state = "MatchEnd";
+    end
+end
+
+function startNextMatch()
+    if (Game.state == "MatchEnd") then
+        resetPoints();
+        resetPaddlesPosition();
+        Game.state = "Playing";
+    end
+end
